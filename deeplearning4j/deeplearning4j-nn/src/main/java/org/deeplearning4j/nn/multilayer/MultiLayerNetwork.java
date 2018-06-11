@@ -44,6 +44,7 @@ import org.deeplearning4j.nn.gradient.Gradient;
 import org.deeplearning4j.nn.graph.ComputationGraph;
 import org.deeplearning4j.nn.layers.FrozenLayer;
 import org.deeplearning4j.nn.layers.FrozenLayerWithBackprop;
+import org.deeplearning4j.nn.layers.LayerHelper;
 import org.deeplearning4j.nn.updater.MultiLayerUpdater;
 import org.deeplearning4j.nn.updater.UpdaterCreator;
 import org.deeplearning4j.nn.workspace.ArrayType;
@@ -2786,6 +2787,11 @@ public class MultiLayerNetwork implements Serializable, Classifier, Layer, Neura
         }
 
         return new Pair<>(maskArray, currentMaskState);
+    }
+
+    @Override
+    public LayerHelper getHelper() {
+        throw new UnsupportedOperationException("Not supported");
     }
 
     //==========
